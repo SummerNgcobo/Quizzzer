@@ -1,0 +1,144 @@
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: translate3d(0, 0, 0) scale3d(1.05, 1.05, 1) rotateX(5deg) rotateY(5deg) rotateZ(0deg) skew(0deg, 0deg);
+}
+
+
+.partnerLogo {
+  height: 36px;
+  width: auto;
+}
+
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 4rem;
+  margin: 0 auto;          /* Centers the navLinks group horizontally */
+}
+
+.navItem {
+  position: relative;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.navItem a,
+.navItem span {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+
+.dropdown {
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+
+.dropdownItem {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #333;
+  white-space: nowrap;
+}
+
+.dropdownItem:hover {
+  background-color: #f5f5f5;
+}
+
+.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between buttons */
+}
+
+.loginButton {
+  opacity: .6;
+  line-height: 20px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #05060f;
+  padding: 12px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color .2s ease-in-out;
+}
+
+.loginButton:hover {
+  background-color: #05060f1a;
+  color: #000000;
+}
+
+
+.ctaButton {
+  font-size: 16px;
+  background-color: #513deb;
+  /* opacity: .6; */
+  color: white;
+  padding: 12px 16px;
+  line-height: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color .2s ease-in-out;
+}
+
+.ctaButton:hover {
+  background-color: #003fcc;
+}

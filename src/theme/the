@@ -1,0 +1,45 @@
+{
+  "label": "UX Certification Theme",
+  "preview_path": "./templates/page.hubl.html",
+  "screenshot_path": "./images/theme-screenshot.png",
+  "enable_domain_stylesheets": false,
+  "enable_domain_templates": false,
+  "author": {
+    "name": "Summer Ngcobo",
+    "email": "summerngcobo02@gmail.com"
+  },
+  "global": {
+    "colors": [
+      { "name": "Primary Purple", "slug": "primary", "color": "#513deb" },
+      { "name": "Secondary Blue", "slug": "secondary", "color": "#0a66c2" },
+      { "name": "Accent Red", "slug": "accent", "color": "#ff5a5f" },
+      { "name": "Dark Text", "slug": "text-dark", "color": "#05060f" },
+      { "name": "Body Text", "slug": "text-body", "color": "#333333" },
+      { "name": "Muted Gray", "slug": "text-muted", "color": "#555555" },
+      { "name": "Background White", "slug": "background", "color": "#ffffff" },
+      { "name": "Background Light Gray", "slug": "background-light", "color": "#f8f8f8" },
+      { "name": "Background Soft", "slug": "background-soft", "color": "#f9f9f9" },
+      { "name": "Success", "slug": "success", "color": "#10B981" },
+      { "name": "Error", "slug": "error", "color": "#ff5a5f" }
+    ],
+    "fonts": [
+      {
+        "name": "Headings",
+        "slug": "headings",
+        "family": "Poppins, sans-serif"
+      },
+      {
+        "name": "Body",
+        "slug": "body",
+        "family": "Inter, sans-serif"
+      }
+    ],
+    "spacing": {
+      "scale": [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80],
+      "unit": "px"
+    },
+    "borders": {
+      "radius": [8, 10, 12, 16, 20]
+    }
+  }
+}

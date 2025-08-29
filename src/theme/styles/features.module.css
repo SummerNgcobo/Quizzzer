@@ -1,0 +1,92 @@
+/* Container for the entire highlights section */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 4rem 1.5rem;
+  align-items: start;
+}
+
+/* Individual highlight card */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+ display: grid;
+}
+
+/* Card icon wrapper */
+.card img,
+.card svg {
+  width: 20px;
+  height: 20px;
+  /* margin-bottom: 1rem; */
+  color: #5783fc; /* Default icon color similar to UXcel */
+  flex-shrink: 0;
+}
+
+/* Card title */
+.card h3 {
+  font-size: var(--_typography---texts--m);
+  font-weight: 700;
+  margin-bottom: 0;
+  color: #111;
+}
+
+/* Card description */
+.card p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* Special styling for CTA link in last card */
+.card .cta {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #6a4ff1; /* Purple link similar to UXcel */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card .cta:hover {
+  color: #4a32b8;
+  text-decoration: underline;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between icon and title */
+  margin-bottom: 0.5rem; /* spacing from description */
+}
+
+.cardHeader img {
+  width: 20px;  /* same as UXcel style */
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.cardHeader h3 {
+  font-size: var(--_typography---texts--m);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .highlights {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .highlights {
+    grid-template-columns: 1fr;
+    padding: 3rem 1rem;
+  }
+}

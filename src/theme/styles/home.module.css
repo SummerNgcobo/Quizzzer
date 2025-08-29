@@ -1,0 +1,479 @@
+/* === HERO SECTION === */
+.heroSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.heroContent {
+  flex: 1 1 500px;
+  text-align: left;
+}
+
+.heroButtons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.heroCtaButton {
+  background-color: #513deb;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 1000;
+  transition: background-color .2s ease-in-out;
+  transition-property: box-shadow;
+  box-shadow: 0 2px 6px rgba(81, 61, 235, 0.15);
+}
+
+
+.heroCtaButton:hover {
+  background-color: #513deb;
+  opacity: 0.8;
+}
+
+.heroTeamsButton {
+  background-color: transparent;
+  color: #000000;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  border-color: #05060f1a; 
+  transition-property: box-shadow;
+  text-decoration: none;
+  font-weight: 1000;
+  transition: background-color .2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(81, 61, 235, 0.15);
+}
+
+.heroTeamsButton:hover {
+  opacity: 0.8;
+  background-color: #fff;
+  color: #000000;
+}
+
+.highlight {
+  color: #513deb; 
+}
+
+.title {
+  /* font-size: 3rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1rem; */
+  letter-spacing: -1.28px;
+  font-size: 64px;
+  line-height: 1.125;
+}
+
+.heroSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.heroContent {
+  flex: 1;
+}
+
+.supportingBlock {
+  font-size: 1.5rem;
+  color: #444;
+  flex: 1;
+  font-size: 28px;
+  line-height: 32px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+
+
+}
+
+/* === TABS SECTION === */
+.tabsContainer {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  margin-top: 20px;
+}
+
+.tabsMenu {
+  padding: 4px;
+  border-radius: 12px;
+  background-color: #f8f8f8;
+  /* grid-column-gap: var(--_sizes---xxsmall);
+  grid-row-gap: var(--_sizes---xxsmall); */
+  /* width: auto; */
+  width: 100%;
+  display: flex;
+}
+
+.tabsLink {
+   padding: 6px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--_typography---texts--m);
+  color: #444;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1; 
+  margin: 0 2px;
+  text-align: center; 
+  min-width: 0; 
+}
+
+.tabsLink:hover {
+  border: 1px solid #444;
+  box-shadow: 0 2px 4px #05060f0a, 0 0 5px #05060f05;
+}
+
+.tabsLink.isActive {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #444;
+  box-shadow: 0 2px 4px #05060f0a, 0 0 5px #05060f05;
+}
+
+.tabContent {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabContent.isActive {
+  display: block;
+}
+
+/* === MARQUEE SECTION === */
+.marqueeSection {
+  padding: 3rem 0;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marqueeInner {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: marqueeAnimation 33.5s linear infinite;
+}
+
+.runningLogosItem {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.runningLogosItem:hover {
+  opacity: 1;
+}
+
+@keyframes marqueeAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .marqueeInner {
+    gap: 20px;
+    animation-duration: 25s;
+  }
+  
+  .runningLogosItem {
+    height: 60px;
+  }
+}
+
+.purpleLink {
+  color: #513deb;
+  font-weight: 600;
+  text-decoration: none;
+   font-size: 18px;
+}
+
+.purpleLink:hover {
+  color: #513deb;
+  opacity: 0.8;
+}
+.opacity60 {
+  opacity: 0.6;
+  color: #333;
+    background-color: #fff;
+    min-height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .tabsMenu {
+    flex-wrap: wrap;
+  }
+  
+  .mobileHidden {
+    display: none;
+  }
+  
+  .mobileOnly {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .heroSection {
+    flex-direction: column;
+  }
+  .supportingBlock {
+    font-size: 20px;
+    line-height: 32px;
+    margin-top: 24px;
+  }
+}
+
+
+.badgeWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff;
+  padding: 8px 12px;
+  border-radius: 100px;
+  box-shadow: 0 2px 6px rgba(81, 61, 235, 0.15);
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  user-select: none;
+}
+
+.badgeImage {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.ctaButton {
+  background-color: #ff5a5f;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.ctaButton:hover {
+  background-color: #e14f50;
+}
+
+/* VIDEO SECTION */
+.videoSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.quizVideo {
+  width: 90%;
+  max-width: 900px;
+  max-height: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  animation: flipX 3s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flipX {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* === QUIZ SECTION === */
+.quizSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.quizImageWrapper {
+  flex: 1 1 500px;
+  text-align: center;
+}
+
+.quizImage {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.quizContent {
+  flex: 1 1 500px;
+  text-align: left;
+}
+
+.quizTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.quizSubtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+.ctaButtonAlt {
+  background-color: #0a66c2;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButtonAlt:hover {
+  background-color: #513deb;
+}
+
+/* RESULTS SECTION */
+.resultsSection {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.resultsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  align-items: end;
+}
+
+.resultsTitle {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  color: #05060f;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.resultsSubtitle {
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(5, 6, 15, 0.6);
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .heroSection,
+  .quizSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroContent,
+  .quizContent {
+    text-align: center;
+  }
+
+  .ctaButton,
+  .ctaButtonAlt {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .resultsContainer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 24px;
+  }
+  
+  .resultsTitle {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  .resultsSubtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+}
+
+

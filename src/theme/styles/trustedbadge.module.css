@@ -1,0 +1,20 @@
+.badgeWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff; /* subtle light blue background */
+  padding: 8px 12px;
+  border-radius: 100px;
+  box-shadow: 0 2px 6px rgba(81, 61, 235, 0.15); /* soft purple shadow */
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000; /* Uxcel purple */
+  user-select: none;
+  line-height: 22px;
+}
+
+.badgeImage {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}

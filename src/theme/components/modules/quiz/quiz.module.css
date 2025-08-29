@@ -1,0 +1,146 @@
+.quizContainer {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  color: #111827;
+  position: relative;
+}
+
+/* Progress bar at top */
+.topBar {
+  position: relative;
+  height: 6px;
+  background: #f3f4f6;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+.progress {
+  height: 100%;
+  background: #facc15;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+.counter {
+  position: absolute;
+  right: 0;
+  top: -28px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Question */
+.questionText {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* Options */
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.optionButton {
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.optionButton:hover {
+  background: #f9fafb;
+}
+.correct {
+  border-color: #10b981;
+  background: #d1fae5;
+  color: #065f46;
+}
+.incorrect {
+  border-color: #ef4444;
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+
+/* Buttons */
+.nextButton,
+.dontKnow {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.nextButton {
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+.nextButton:hover {
+  background: #1d4ed8;
+}
+.dontKnow {
+  background: #f3f4f6;
+  border: none;
+  color: #374151;
+}
+.dontKnow:hover {
+  background: #e5e7eb;
+}
+
+/* Timer */
+.timer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-align: left;
+}
+
+/* Results */
+.results {
+  text-align: center;
+  padding: 2rem;
+}
+.results h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.results p {
+  font-size: 1.25rem;
+}
+
+/* Controls Row */
+.controlsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+/* Timer */
+.timer {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.questionRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.questionVideo {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}

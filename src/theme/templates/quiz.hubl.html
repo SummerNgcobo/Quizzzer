@@ -1,0 +1,12 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Quiz Page
+-->
+{% extends "./layouts/base.hubl.html" %}
+
+{% block body %}
+  <main>
+    {% module "quiz_section" path="../components/modules/quiz", label="Quiz Page" %}
+  </main>
+{% endblock body %}
