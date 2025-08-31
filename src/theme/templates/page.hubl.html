@@ -46,19 +46,10 @@
     brandColors="{{ theme.brand_color }}"
   %}
     
-  {# Bottom DND area (optional: for footers, CTAs, etc.) #}
-  {% dnd_area "bottom_dnd_area" label="Bottom Area" %}
-    {% dnd_section %}
-      {% dnd_column width=12 %}
-        {% dnd_row %}
-          {% dnd_module path='@hubspot/rich_text', label="Footer Text" %}
-            {% module_attribute "html" %}
-              <p>Add footer content or calls-to-action here.</p>
-            {% end_module_attribute %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
-    {% end_dnd_section %}
-  {% end_dnd_area %}
+  {% module
+    "Home"
+    path="../components/modules/footer.jsx",
+    brandColors="{{ theme.brand_color }}"
+  %}
 
 {% endblock %}

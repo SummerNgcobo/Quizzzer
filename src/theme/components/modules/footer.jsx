@@ -1,138 +1,276 @@
-import React, { useState } from 'react';
-import styles from '../../styles/footer.module.css';
+import React from 'react';
+import styles from "../../styles/footer.module.css";
 import {
   ModuleFields,
   TextField,
-} from '@hubspot/cms-components/fields';
+  RichTextField,
+  ImageField,
+  UrlField,
+  RepeatedFieldGroup,
+  BooleanField,
+} from "@hubspot/cms-components/fields";
 
-// Static version of the Navbar
-export const Footer = () => {
-  const [activeDropdown, setActiveDropdown] = useState(null);
-
-  const navItems = [
+// ✅ Footer component
+export const Component = ({ 
+  ctaHeading, 
+  ctaButtonText, 
+  ctaButtonUrl,
+  companyName,
+  showAppButtons,
+  appStoreUrl,
+  googlePlayUrl,
+  socialLinks,
+  footerColumns,
+  copyrightText,
+  bottomLinks
+}) => {
+  // Organized links by category as shown in the screenshot
+  const linkCategories = [
     {
-      label: 'Product',
-      submenu: ['Design Courses', 'Assessments', 'UX Tools', 'Pricing'],
+      title: "Products",
+      links: [
+        "Courses",
+        "Career paths", 
+        "Skill assessments",
+        "Project briefs",
+        "Professional certifications",
+        "UX learning experience",
+        "PM learning experience",
+        "Uxcel Pulse",
+        "CAREER QUIZ"
+      ]
     },
     {
-      label: 'Events',
-      submenu: ['Webinars', 'Workshops', 'UX Challenges'],
+      title: "For Business",
+      links: [
+        "Uxcel for Teams",
+        "Business pricing",
+        "Customer stories",
+        "Book a demo",
+        "Learn",
+        "Team certification"
+      ]
     },
     {
-      label: 'Resources',
-      submenu: ['Blog', 'Guides', 'Community'],
+      title: "Community",
+      links: [
+        "Upcoming events",
+        "Past webinars & events",
+        "Learner stories",
+        "Uxcel rankings",
+        "Certified professionals",
+        "Discord community",
+        "Impact report",
+        "Wall of love"
+      ]
     },
+    {
+      title: "Popular Courses",
+      links: [
+        "UX design courses",
+        "Product management courses",
+        "AI courses",
+        "UX Design Foundations",
+        "Accessibility foundations",
+        "Product discovery"
+      ]
+    },
+    {
+      title: "Resources",
+      links: [
+        "Why Uxcel?",
+        "Blog",
+        "Instructors program",
+        "Mentors program",
+        "Affiliate program",
+        "Universities & non-profits program"
+      ]
+    },
+    {
+      title: "More",
+      links: [
+        "State of AI in product teams REPORT",
+        "Gift membership",
+        "Partnerships",
+        "Design maturity assessment",
+        "Compare Uxcel"
+      ]
+    }
   ];
 
-   return (
-    <nav className={styles.footer}>
-      {/* Left side - Uxcel logo */}
-      <div className={styles.logo}>
-        <img
-          src="https://cdn.prod.website-files.com/61f9082050036c5b7a4899f5/632ac9aada179418cfc68fc3_logo%20(1).svg"
-          alt="Uxcel logo"
-          className={styles.partnerLogo}
-        />
-      </div>
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        {/* CTA Section */}
+        <div className={styles.footerCta}>
+          <div className={styles.ctaContent}>
+            <h3 className={styles.ctaHeading}>
+              {ctaHeading || "Invest in your product career with Uxcel today"}
+            </h3>
+          </div>
+          <div className={styles.ctaBtnWrapper}>
+            <a href={ctaButtonUrl || "#"} className={styles.ctaBtn}>
+              {ctaButtonText || "Get started"}
+            </a>
+          </div>
+        </div>
 
-      <ul className={styles.navLinks}>
-        {navItems.map((item, index) => (
-          <li
-            key={index}
-            className={styles.navItem}
-            onMouseEnter={() => setActiveDropdown(index)}
-            onMouseLeave={() => setActiveDropdown(null)}
-          >
-            <span>{item.label}</span>
-            <div
-              className={`${styles.dropdown} ${
-                activeDropdown === index ? styles.show : ''
-              }`}
-            >
-              {item.submenu.map((subItem, subIndex) => (
-                <a key={subIndex} href="#" className={styles.dropdownItem}>
-                  {subItem}
-                </a>
-              ))}
+        <div className={styles.sectionDivider}></div>
+
+        {/* Main Footer Content */}
+        <div className={styles.footerTop}>
+          {/* Left Column */}
+          <div className={styles.footerColFirst}>
+            <div className={styles.footerColInnerTop}>
+              <a href="/" className={styles.footerLogo}>
+                <span className={styles.logoIcon}>🏢</span>
+                <span className={styles.logoText}>{companyName || "UXCEL"}</span>
+              </a>
+              <ul className={styles.footerLinksList}>
+                <li className={styles.footerMenuItem}>
+                  <a href="/about" className={styles.footerLink}>About Us</a>
+                </li>
+                <li className={styles.footerMenuItem}>
+                  <a href="/news" className={styles.footerLink}>News & Updates</a>
+                </li>
+                <li className={styles.footerMenuItem}>
+                  <a href="/help" className={styles.footerLink}>Help Center</a>
+                </li>
+              </ul>
             </div>
-          </li>
-        ))}
-        <li className={styles.navItem}>
-          <a href="/about">About</a>
-        </li>
-      </ul>
+            
+            <div className={styles.footerColInnerBottom}>
+              <ul className={styles.footerSocialList}>
+                {socialLinks?.map((social, index) => (
+                  <li key={index}>
+                    <a 
+                      href={social.url || "#"} 
+                      aria-label={social.platform || "Social Media"} 
+                      className={styles.footerSocialLink}
+                    >
+                      {social.platform === 'LinkedIn' && <span className={styles.socialIcon}>💼</span>}
+                      {social.platform === 'Instagram' && <span className={styles.socialIcon}>📷</span>}
+                      {social.platform === 'YouTube' && <span className={styles.socialIcon}>🎥</span>}
+                      {social.platform === 'Twitter' && <span className={styles.socialIcon}>🐦</span>}
+                      {social.platform === 'Discord' && <span className={styles.socialIcon}>💬</span>}
+                    </a>
+                  </li>
+                ))}
+              </ul>
 
-      <div className={styles.cta}>
-        <a href="/login" className={styles.loginButton}>
-          Log In
-        </a>
-        <a href="/signup" className={styles.ctaButton}>
-          Get Started
-        </a>
+              {showAppButtons && (
+                <div className={styles.footerAppBtns}>
+                  <a href={appStoreUrl || "#"} className={styles.appButton}>
+                    <img 
+                      src="https://cdn.prod.website-files.com/61f9082050036c5b7a4899f5/64e631dd27f783843fc69fac_appstore.svg" 
+                      alt="AppStore" 
+                      width="162" 
+                      height="52"
+                    />
+                  </a>
+                  <a href={googlePlayUrl || "#"} className={styles.appButton}>
+                    <img 
+                      src="https://cdn.prod.website-files.com/61f9082050036c5b7a4899f5/64e632ae608f42e274e27b44_googleplay.svg" 
+                      alt="Google Play" 
+                      width="162" 
+                      height="52"
+                    />
+                  </a>
+                </div>
+              )}
+
+              <div className={styles.footerBadgeWrapper}>
+                <div className={styles.badge}>
+                  <span className={styles.badgeText}>Top Rated</span>
+                  <span className={styles.badgeYear}>2025</span>
+                </div>
+                <div className={styles.badge}>
+                  <span className={styles.badgeText}>Premium</span>
+                  <span className={styles.badgeYear}>Service</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Link Categories */}
+          <div className={styles.rhsLinks}>
+            {linkCategories.map((category, index) => (
+              <div key={index} className={styles.linksColumn}>
+                <h4 className={styles.linksHeader}>{category.title}</h4>
+                <ul className={styles.linksList}>
+                  {category.links.map((link, idx) => (
+                    <li key={idx} className={styles.linkItem}>
+                      <a href="#">{link}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.sectionDivider}></div>
+
+        {/* Footer Bottom */}
+        <div className={styles.footerBottom}>
+          <ul className={styles.footerBottomLinks}>
+            {bottomLinks?.map((link, index) => (
+              <li key={index}>
+                <a href={link.url || "#"}>
+                  {link.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.copyright}>
+            {copyrightText || `© 2025 ${companyName || "Uxcel"} Management Ltd. All rights reserved.`}
+          </div>
+        </div>
       </div>
-    </nav>
+    </footer>
   );
 };
 
-// HubSpot CMS Module version
-export function Component({ fieldValues }) {
-  const navItems = fieldValues.navLinks || [];
-
-  return (
-    <nav className={styles.footer}>
-      <div className={styles.logo}>{fieldValues.logoText}</div>
-
-      <ul className={styles.navLinks}>
-        {navItems.map((item, index) => (
-          <li key={index} className={styles.navItem}>
-            <a href={item.url?.href || '#'}>{item.label}</a>
-          </li>
-        ))}
-      </ul>
-
-      <div className={styles.cta}>
-        <a href={fieldValues.loginUrl?.href || '/login'} className={styles.loginButton}>
-          {fieldValues.loginText || 'Login'}
-        </a>
-        <a href={fieldValues.ctaUrl?.href} className={styles.ctaButton}>
-          {fieldValues.ctaText}
-        </a>
-      </div>
-    </nav>
-  );
-}
-
+// ✅ HubSpot module fields
 export const fields = (
   <ModuleFields>
-    <TextField
-      name="logoText"
-      label="Logo Text"
-      default="StackBuilder"
-    />
-    <TextField
-      name="loginText"
-      label="Login Button Text"
-      default="Login"
-    />
-    <TextField
-      name="loginUrl"
-      label="Login Button URL"
-      default="/login"
-    />
-    <TextField
-      name="ctaText"
-      label="CTA Button Text"
-      default="Get Started"
-    />
-    <TextField
-      name="ctaUrl"
-      label="CTA Button URL"
-      default="/signup"
-    />
-    {/* Add fields for navLinks if needed */}
+    <TextField name="ctaHeading" label="CTA Heading" default="Invest in your product career with Uxcel today" />
+    <TextField name="ctaButtonText" label="CTA Button Text" default="Get started" />
+    <UrlField name="ctaButtonUrl" label="CTA Button URL" default={{ href: "/get-started" }} />
+    <TextField name="companyName" label="Company Name" default="Uxcel" />
+    <BooleanField name="showAppButtons" label="Show App Store Buttons" default={true} />
+    <UrlField name="appStoreUrl" label="App Store URL" default={{ href: "/app-store" }} />
+    <UrlField name="googlePlayUrl" label="Google Play URL" default={{ href: "/google-play" }} />
+    <RepeatedFieldGroup name="socialLinks" label="Social Media Links" default={[
+      { platform: "LinkedIn", url: { href: "/linkedin" } },
+      { platform: "Instagram", url: { href: "/instagram" } },
+      { platform: "YouTube", url: { href: "/youtube" } },
+      { platform: "Twitter", url: { href: "/twitter" } },
+      { platform: "Discord", url: { href: "/discord" } }
+    ]}>
+      <TextField name="platform" label="Platform" />
+      <UrlField name="url" label="URL" />
+    </RepeatedFieldGroup>
+    <RepeatedFieldGroup name="footerColumns" label="Footer Columns" default={[]}>
+      <TextField name="title" label="Column Title" />
+      <RepeatedFieldGroup name="links" label="Links">
+        <TextField name="text" label="Link Text" />
+        <UrlField name="url" label="Link URL" />
+        <TextField name="badge" label="Badge Text (optional)" />
+        <TextField name="badgeColor" label="Badge Color (blue/default)" />
+      </RepeatedFieldGroup>
+    </RepeatedFieldGroup>
+    <RepeatedFieldGroup name="bottomLinks" label="Bottom Links" default={[]}>
+      <TextField name="text" label="Link Text" />
+      <UrlField name="url" label="Link URL" />
+    </RepeatedFieldGroup>
+    <TextField name="copyrightText" label="Copyright Text" default="© 2025 UXCEL Management Ltd. All rights reserved." />
   </ModuleFields>
 );
 
+// ✅ HubSpot module meta
 export const meta = {
-  label: 'Footer Module',
+  label: "Uxcel-style Footer",
+  icon: "layout",
+  category: "theme",
 };
