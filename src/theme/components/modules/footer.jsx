@@ -200,7 +200,7 @@ export const Component = ({
                 <ul className={styles.linksList}>
                   {category.links.map((link, idx) => (
                     <li key={idx} className={styles.linkItem}>
-                      <a href="#">{link}</a>
+                      <a href={link === "CAREER QUIZ" ? "/quiz" : "#"}>{link}</a>
                     </li>
                   ))}
                 </ul>
